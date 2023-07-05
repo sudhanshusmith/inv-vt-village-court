@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome TO 3D Online Village Court</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Script to change display=block of "click to walthrough" boxes in X seconds -->
+    <script type="text/javascript">
+      window.addEventListener("load", function () {
+        setTimeout(function open(event) {
+          document.querySelector(".box1").style.display = "block";
+        }, 5000);
+      });
+    </script>
+
+    <script>
+      const myTimeout = setTimeout(myGreeting1, 8000);
+      const myTimeout2 = setTimeout(myGreeting2, 20000);
+      function myGreeting1() {
+        document.getElementById("container").innerHTML = " ";
+        document.getElementById("animation").innerHTML = " ";
+      }
+      function myGreeting2() {
+        document.getElementById("container1").innerHTML = " ";
+      }
+    </script>
+
+    <!-- iframe of the model  -->
+    <iframe
+      id="questionnaire"
+      style="
+        position: absolute;
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+        border: none;
+      "
+      src="https://my.matterport.com/show/?m=VaqiYXdMRYP&help=1&play=1"
+      scrolling="no"
+      allow="xr-spatial-tracking"
+    ></iframe>
+
+    <!-- myBox for hiding the Matterport watermark -->
+    <div class="myBox"></div>
+
+    <!-- For Hiding the watermark for low screen width  -->
+    <div>
+      <h3 style="padding-left: 0%"></h3>
+    </div>
+
+    <!-- It's for showing "Click for Walkthrough" and it's being delayed intentionally (8sce-12sec) -->
+    <div id="container1">
+      <div class="box1">
+        <img src="https://invoxel.com/jaipur_demos/images/Phoneyy.png" />
+      </div>
+    </div>
+
+    <!-- Loader animation -->
+    <div id="animation">
+      <div class="loader-container">
+        <div class="loader"></div>
+      </div>
+    </div>
+
+    <!-- for Img posters and it's being delayed intentionally (0-8sec) -->
+    <div id="container">
+      <div class="box">
+        <picture>
+          <source
+            media="(min-width: 1000px)"
+            srcset="
+            https://invoxel.com/craftgalleries/images/Tulsichowk.png
+            "
+          />
+          <source
+            media="(min-width: 300px)"
+            srcset="
+            https://invoxel.com/craftgalleries/images/Tulsichowk-mobile.png
+            "
+          />
+          <img src="https://invoxel.com/craftgalleries/images/Tulsichowk.png" />
+        </picture>
+      </div>
+    </div>
+  </body>
+</html>
